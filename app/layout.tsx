@@ -13,9 +13,9 @@ const aurora = Audiowide({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "NyxiumAI — Agente de Inteligencia Artificial para tu Negocio",
+  description:
+    "Automatiza tareas repetitivas, integra tus herramientas y escala sin límites con nuestro agente de IA avanzado. Disponible 24/7.",
 }
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${aurora.className} font-sans antialiased`}>
         {children}
         <Analytics />

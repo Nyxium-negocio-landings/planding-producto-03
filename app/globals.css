@@ -133,6 +133,32 @@
   }
 }
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide Spline watermark — overlay mask on the iframe container */
+iframe[src*="spline.design"] + .spline-watermark,
+iframe[src*="spline.design"] ~ a.spline-watermark {
+  display: none !important;
+}
+
+/* Container approach: clip the watermark area of the Spline iframe */
+.spline-watermark {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 /* Adding pulsing animation for image that scales between 95% and 105% */
 @keyframes pulse-scale {
   0%,
@@ -146,4 +172,37 @@
 
 .animate-pulse-scale {
   animation: pulse-scale 3s ease-in-out infinite;
+}
+
+/* Fade-in-up entrance animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Glow pulse for CTA orbs */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
 }
